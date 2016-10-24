@@ -1,6 +1,6 @@
 ## ticker-tape
 
-[](http://i.imgur.com/wrgYK11.gifv)
+![preview](http://i.imgur.com/wrgYK11.gif)
 
 A small project in TypeScript to make a cool looking text unscrambler.
 
