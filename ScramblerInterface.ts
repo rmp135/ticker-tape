@@ -3,3 +3,5 @@ interface ScramblerInterface {
   CurrentWord: string;
   HasCompleted: boolean;
 }
+
+export default ScramblerInterface

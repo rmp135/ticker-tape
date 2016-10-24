@@ -1,10 +1,10 @@
 import * as sample from 'lodash/sample'
 import BaseScrambler from './BaseScrambler'
+import { BasescramblerOptions } from './BaseScrambler'
 import { generateDefaultCharacterSet, generateWordFromCharacterSet } from './Helper'
 
-interface UnscramblerOptions {
-  startingWord?: string;
-  cyclesPerChar: number;
+interface UnscramblerOptions extends BasescramblerOptions {
+    cyclesPerChar?: number;
 }
 
 export default class Unscrambler extends BaseScrambler {
@@ -31,7 +31,7 @@ export default class Unscrambler extends BaseScrambler {
       this.currentWord[this.currentLetter] = sample(this.characterSet);
       this.currentCycle++;
     }
-    if (this.currentLetter === this.targetWord.length) {
+    if (this.currentLetter === Math.max(this.targetWord.length, this.currentWord.length)) {
       this.HasCompleted = true;
     }
 

@@ -1,9 +1,9 @@
 import TickerTape from './TickerTape'
+import Unscrambler from './Unscrambler'
 
 let options = {
-  word: "something old",
+  scrambler: new Unscrambler("something", { startingWord: "ses" }),
   el: "#something",
-  startingWord: ""
 }
 
 let ticker = new TickerTape(options)
@@ -13,22 +13,3 @@ ticker.onComplete(() => {
 })
 
 ticker.autoTick(50)
-
-// interface ISomething {
-
-// }
-
-// class ISomethingBase implements ISomething {
-//   constructor () {}
-// }
-
-// class s extends ISomethingBase {
-//   constructor () {
-//     super()
-//     console.log ('wewadwa')
-//   }
-// }
-
-// let arr:typeof ISomethingBase[] = [s]
-
-// new arr[0]()
