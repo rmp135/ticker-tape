@@ -3,13 +3,13 @@ import BaseScrambler from './BaseScrambler'
 import { BasescramblerOptions } from './BaseScrambler'
 import { generateDefaultCharacterSet, generateWordFromCharacterSet } from './Helper'
 
-interface UnscramblerOptions extends BasescramblerOptions {
+export interface UnscramblerOptions extends BasescramblerOptions {
     cyclesPerChar?: number;
 }
 
 export default class Unscrambler extends BaseScrambler {
   private currentCycle : number;
-  private currentLetter: number;
+  protected currentLetter: number;
   private cyclesPerChar: number;
   constructor (targetWord: string, props: UnscramblerOptions) {
     super(targetWord, props);
@@ -34,6 +34,5 @@ export default class Unscrambler extends BaseScrambler {
     if (this.currentLetter === Math.max(this.targetWord.length, this.currentWord.length)) {
       this.HasCompleted = true;
     }
-
   }
 }

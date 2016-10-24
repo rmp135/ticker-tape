@@ -1,8 +1,9 @@
 import TickerTape from './TickerTape'
 import Unscrambler from './Unscrambler'
+import StyledUnscrambler from './StyledUnscrambler'
 
 let options = {
-  scrambler: new Unscrambler("something", { startingWord: "ses" }),
+  scrambler: new StyledUnscrambler("something", { cyclesPerChar: 3 }),
   el: "#something",
 }
 
@@ -12,4 +13,4 @@ ticker.onComplete(() => {
   console.log("JOB DONE")
 })
 
-ticker.autoTick(50)
+ticker.autoTick(100)

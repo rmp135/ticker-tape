@@ -7,11 +7,11 @@ interface TickerOptions {
 }
 
 interface CallbackFunction {
-  (context: TickerTape) : void;
+  (context: TickerTape): void;
 }
 
 export default class TickerTape {
-  private scrambler : ScramblerInterface;
+  private scrambler: ScramblerInterface;
   private el: Element;
   private events: {
     onUpdate: CallbackFunction[],
@@ -19,7 +19,7 @@ export default class TickerTape {
     onComplete: CallbackFunction[]
   }
 
-  get CurrentWord () : String {
+  get CurrentWord (): String {
     return this.scrambler.CurrentWord;
   }
 
@@ -38,21 +38,21 @@ export default class TickerTape {
     }
   }
 
-  private runAllFunctions(funs: Function[]) {
+  private runAllCallbacks(funs: CallbackFunction[]) {
     for (let fun of funs) {
       fun(this)
     }
   }
 
   tick () {
-    this.runAllFunctions(this.events.beforeUpdate);
+    this.runAllCallbacks(this.events.beforeUpdate);
     this.scrambler.tick();
     if (this.el) {
-      this.el.textContent = this.scrambler.CurrentWord;
+      this.el.innerHTML = this.scrambler.CurrentWord;
     }
-    this.runAllFunctions(this.events.onUpdate);
+    this.runAllCallbacks(this.events.onUpdate);
     if (this.scrambler.HasCompleted) {
-      this.runAllFunctions(this.events.onComplete)
+      this.runAllCallbacks(this.events.onComplete)
     }
   }
 
@@ -63,11 +63,11 @@ export default class TickerTape {
     setTimeout(this.autoTick.bind(this, [time]), time)
   }
 
-  onUpdate (callback: CallbackFunction) {
+  preUpdate (callback: CallbackFunction) {
     this.events.onUpdate.push(callback);
   }
 
-  beforeUpdate (callback: CallbackFunction) {
+  postUpdate (callback: CallbackFunction) {
     this.events.beforeUpdate.push(callback);
   }
 
