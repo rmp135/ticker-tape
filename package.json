@@ -4,8 +4,8 @@
     "name": "Ryan Poole",
     "email": "rmp135@gmail.com"
   },
-  "types": "./lib/ticker-tape.d.ts",
-  "main": "./lib/main.js",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {

@@ -1,7 +1,4 @@
 node_modules/
 .vscode/
-yarn.lock
-*.js
-!*.spec.js
 npm-debug.log
 yarn-error.log
