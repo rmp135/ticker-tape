@@ -1,7 +1,7 @@
 import Unscrambler from './Unscrambler'
 import { UnscramblerOptions } from './Unscrambler'
 
-interface StyledUnscramblerOptions extends UnscramblerOptions {
+export interface StyledUnscramblerOptions extends UnscramblerOptions {
   className?: string
 }
 

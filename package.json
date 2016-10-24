@@ -1,15 +1,24 @@
 {
   "name": "ticker-tape",
+  "author": {
+    "name": "Ryan Poole",
+    "email": "rmp135@gmail.com"
+  },
+  "types": "./lib/ticker-tape.d.ts",
+  "main": "./lib/index.js",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "@types/core-js": "^0.9.34",
-    "@types/lodash": "^4.14.37",
+    "@types/lodash": "^4.14.37"
+  },
+  "devDependencies": {
+    "dts-generator": "^2.0.0",
     "jest": "^16.0.2",
-    "lodash": "^4.16.4"
+    "typescript": "^2.0.3"
   },
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest",
+    "build": "tsc && dts-generator --name TickerTape --project . --out ./lib/ticker-tape.d.ts"
   }
 }

@@ -1,12 +1,12 @@
 import { generateDefaultCharacterSet } from './Helper'
 import ScramblerInterface from './ScramblerInterface'
 
-interface TickerOptions {
+export interface TickerOptions {
   scrambler: ScramblerInterface;
   el?: Element | string;
 }
 
-interface CallbackFunction {
+export interface CallbackFunction {
   (context: TickerTape): void;
 }
 

@@ -4,6 +4,8 @@
     "types": [
       "core-js",
       "lodash"
-    ]
+    ],
+    "rootDir": "./src",
+    "outDir": "./lib"
   }
 }
