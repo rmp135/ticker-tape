@@ -16,7 +16,7 @@ export default class TickerTape {
     private runAllCallbacks(funs);
     tick(): void;
     autoTick(time: number): void;
-    preUpdate(callback: CallbackFunction): void;
-    postUpdate(callback: CallbackFunction): void;
-    onComplete(callback: CallbackFunction): void;
+    preUpdate(callback: CallbackFunction): this;
+    postUpdate(callback: CallbackFunction): this;
+    onComplete(callback: CallbackFunction): this;
 }

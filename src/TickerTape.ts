@@ -65,13 +65,16 @@ export default class TickerTape {
 
   preUpdate (callback: CallbackFunction) {
     this.events.onUpdate.push(callback);
+    return this;
   }
 
   postUpdate (callback: CallbackFunction) {
     this.events.beforeUpdate.push(callback);
+    return this;
   }
 
   onComplete (callback: CallbackFunction) {
     this.events.onComplete.push(callback);
+    return this;
   }
 }
