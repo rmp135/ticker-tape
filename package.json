@@ -5,20 +5,21 @@
     "email": "rmp135@gmail.com"
   },
   "types": "./lib/ticker-tape.d.ts",
-  "main": "./lib/index.js",
+  "main": "./lib/main.js",
   "version": "1.0.0",
   "license": "MIT",
-  "dependencies": {
-    "@types/core-js": "^0.9.34",
-    "@types/lodash": "^4.14.37"
-  },
   "devDependencies": {
-    "dts-generator": "^2.0.0",
+    "@types/core-js": "^0.9.34",
+    "@types/lodash": "^4.14.37",
     "jest": "^16.0.2",
-    "typescript": "^2.0.3"
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2",
+    "webpack-config": "^6.2.0"
   },
   "scripts": {
     "test": "jest",
-    "build": "tsc && dts-generator --name TickerTape --project . --out ./lib/ticker-tape.d.ts"
+    "build": "webpack",
+    "release": "set NODE_ENV=production&& webpack -p && tsc -d"
   }
 }

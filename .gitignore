@@ -3,6 +3,5 @@ node_modules/
 yarn.lock
 *.js
 !*.spec.js
-lib
 npm-debug.log
 yarn-error.log
